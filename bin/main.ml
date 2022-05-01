@@ -1,3 +1,3 @@
-open Lib
-
-let () = print_endline hello_world
+let () =
+  print_endline Suba.hello_a;
+  print_endline Subb.hello_b
