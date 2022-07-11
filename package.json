@@ -2,18 +2,20 @@
   "name": "hello",
   "esy": {
     "buildsInSource": "_build",
-    "build": "dune build @all"
+    "build": "dune build -p #{self.name}"
   },
   "scripts": {
-    "watch": "esy b dune build -w",
-    "start": "esy b dune exec ./bin/main.exe"
+    "watch": "dune build -p #{self.name} -w",
+    "start": "esy b dune exec ./bin/#{self.name}.exe",
+    "utop": "esy dune utop lib -- -implicit-bindings"
   },
   "dependencies": {
-    "@opam/dune": "2.9.3",
-    "ocaml": "4.13.x"
+    "ocaml": "4.14.x",
+    "@opam/dune": "*"
   },
   "devDependencies": {
     "@opam/ocaml-lsp-server": "*",
-    "@opam/ocamlformat": "*"
+    "@opam/ocamlformat": "*",
+    "@opam/utop": "*"
   }
 }

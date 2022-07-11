@@ -1,4 +1,4 @@
 (executable
- (name main)
- (public_name main.exe)
+ (name hello)
+ (public_name hello)
  (libraries suba subb))
